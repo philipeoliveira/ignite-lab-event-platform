@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+   @apply bg-gray-900 text-gray-100;
+   -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+   .left-arrow::before {
+      content: ' ';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 45%;
+      left: -10px;
+      transform: rotate(45deg) translateY(-45%);
+      @apply bg-green-500 border border-green-500;
+   }
+}
