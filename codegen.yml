@@ -1,4 +1,4 @@
-schema: import.meta.env.VITE_API_URL
+schema: https://api-sa-east-1.graphcms.com/v2/cl4q6kyt73eby01z45d97cfiz/master
 
 documents: './src/graphql/**/*.graphql'
 
