@@ -27,7 +27,7 @@ export function Subscribe() {
 
    return (
       <div className='bg-blurBackground bg-cover bg-no-repeat'>
-         <main className='min-h-screen flex flex-col items-center'>
+         <main className='flex flex-col items-center'>
             <div className='bg-reactIconBackground bg-no-repeat bg-top'>
                <div className='w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto'>
                   <div className='max-w-[640px]'>
