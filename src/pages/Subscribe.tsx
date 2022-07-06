@@ -2,6 +2,9 @@ import { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Footer } from '../components/Footer';
 import { Logo } from '../components/Logo';
+
+import codeImage from '../assets/code-mockup.png';
+
 import { useCreateSubscriberMutation } from '../graphql/generated';
 
 export function Subscribe() {
@@ -81,7 +84,7 @@ export function Subscribe() {
                </div>
 
                <img
-                  src='/src/assets/code-mockup.png'
+                  src={codeImage}
                   alt='Imagem ilustrativa de códigos de programação'
                />
             </div>
