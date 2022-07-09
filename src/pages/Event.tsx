@@ -1,5 +1,6 @@
 import { MonitorPlay } from 'phosphor-react';
 import { useParams } from 'react-router-dom';
+import { Card } from '../components/Card';
 import { Footer } from '../components/Footer';
 import { Header } from '../components/Header';
 import { Sidebar } from '../components/Sidebar';
@@ -13,21 +14,37 @@ export function Event() {
          <Header />
          <div className='flex flex-1 justify-center'>
             <main>
-               <section className='min-h-full flex flex-1 flex-col'>
-                  {slug ? (
-                     <Video lessonSlug={slug} />
-                  ) : (
-                     <h1 className='flex flex-1 justify-center items-center gap-2'>
-                        <MonitorPlay size={32} />
-                        Escolha uma aula em{' '}
-                        <span className='font-bold'>Cronograma de Aulas</span> e
-                        bons estudos!
-                     </h1>
-                  )}
+               <section className='min-h-full flex flex-col'>
+                  <div className='flex-1 max-w-[1100px]'>
+                     {slug ? (
+                        <Video lessonSlug={slug} />
+                     ) : (
+                        <div className='flex justify-center items-center h-64 gap-2'>
+                           <div className='text-blue-500 mt-[0.4rem]'>
+                              <MonitorPlay size={100} weight={'thin'} />
+                           </div>
+                           <div>
+                              <h1 className='text-[2.5rem] leading-tight'>
+                                 Eventos do{' '}
+                                 <strong className='text-blue-500'>
+                                    Ignite Lab
+                                 </strong>
+                              </h1>
+                              <p>
+                                 Escolha uma aula em{' '}
+                                 <span className='text-blue-500'>
+                                    Cronograma de Aulas
+                                 </span>{' '}
+                                 e bons estudos!
+                              </p>
+                           </div>
+                        </div>
+                     )}
 
-                  <div className='px-8 mt-10'>
-                     <Footer />
+                     <Card />
                   </div>
+
+                  <Footer />
                </section>
             </main>
 
