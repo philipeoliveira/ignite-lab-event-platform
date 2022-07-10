@@ -7,7 +7,7 @@ body {
    -webkit-font-smoothing: antialiased;
 }
 
-@layer components {
+@layer utilities {
    .left-arrow::before {
       content: ' ';
       position: absolute;
@@ -17,5 +17,33 @@ body {
       left: -10px;
       transform: rotate(45deg) translateY(-45%);
       @apply bg-green-500 border border-green-500;
+   }
+
+   .my-pulse {
+      animation: myPulse 6s ease-in-out infinite;
+   }
+   @keyframes myPulse {
+      0% {
+         opacity: 0.3;
+      }
+      25% {
+         opacity: 1;
+      }
+   }
+
+   .animated-svg {
+      animation: animateSvg 6s ease-in-out forwards infinite;
+   }
+   @keyframes animateSvg {
+      0% {
+         opacity: 0.3;
+         stroke-dasharray: 640;
+         stroke-dashoffset: 640;
+      }
+      25%,
+      100% {
+         opacity: 1;
+         stroke-dashoffset: 0;
+      }
    }
 }

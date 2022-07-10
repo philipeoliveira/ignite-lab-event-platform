@@ -1,4 +1,4 @@
-import { MonitorPlay } from 'phosphor-react';
+import { MonitorIcon } from '../components/MonitorIcon';
 import { useParams } from 'react-router-dom';
 import { Card } from '../components/Card';
 import { Footer } from '../components/Footer';
@@ -21,9 +21,9 @@ export function Event() {
                      ) : (
                         <div className='flex justify-center items-center h-64 gap-2'>
                            <div className='text-blue-500 mt-[0.4rem]'>
-                              <MonitorPlay size={100} weight={'thin'} />
+                              <MonitorIcon />
                            </div>
-                           <div>
+                           <div className='my-pulse'>
                               <h1 className='text-[2.5rem] leading-tight'>
                                  Eventos do{' '}
                                  <strong className='text-blue-500'>
