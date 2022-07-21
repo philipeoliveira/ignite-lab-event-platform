@@ -2,11 +2,9 @@ export function MonitorIcon() {
    return (
       <svg
          xmlns='http://www.w3.org/2000/svg'
-         width='100'
-         height='100'
          fill='currentColor'
          viewBox='0 0 256 256'
-         className='animated-svg'
+         className='animated-monitor w-20 xl:w-24'
       >
          <rect width='256' height='256' fill='none'></rect>
          <polygon

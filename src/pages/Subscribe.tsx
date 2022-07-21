@@ -30,12 +30,14 @@ export function Subscribe() {
 
    return (
       <div className='bg-blurBackground bg-cover bg-no-repeat'>
-         <main className='flex flex-col items-center'>
+         <main className='flex flex-col items-center md:mx-10'>
             <div className='bg-reactIconBackground bg-no-repeat bg-top'>
-               <div className='w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto'>
-                  <div className='max-w-[640px]'>
-                     <Logo />
-                     <h1 className='mt-8 text-[2.5rem] leading-tight'>
+               <div className='w-full max-w-[1100px] flex flex-col xl:flex-row items-center justify-between mt-16 md:mt-20 mx-auto gap-12'>
+                  <div className='flex flex-col items-center justify-center xl:items-start xl:max-w-[640px] px-10 md:px-0 text-center xl:text-left'>
+                     <div className='w-[237px]'>
+                        <Logo />
+                     </div>
+                     <h1 className='mt-8 text-3xl md:text-[2.5rem] leading-tight'>
                         Construa uma
                         <strong className='text-blue-500'>
                            {' '}
@@ -50,8 +52,8 @@ export function Subscribe() {
                         acessar as melhores oportunidades do mercado.
                      </p>
                   </div>
-                  <div className='p-8 bg-gray-700 border border-gray-500 rounded'>
-                     <strong className='text-2xl mb-6 block'>
+                  <div className='w-full xl:w-auto p-8 bg-gray-700 border border-gray-500 rounded'>
+                     <strong className='text-xl xl:text-2xl mb-6 block'>
                         Inscreva-se gratuitamente
                      </strong>
                      <form
@@ -61,20 +63,20 @@ export function Subscribe() {
                         <input
                            type='text'
                            required
-                           className='bg-gray-900 rounded px-5 h-14 hover:outline hover:outline-1 hover:outline-green-500 focus:outline focus:outline-green-500 focus:invalid:outline-red-500'
+                           className='bg-gray-900 rounded px-5 h-12 xl:h-14 hover:outline hover:outline-1 hover:outline-green-500 focus:outline focus:outline-green-500 focus:invalid:outline-red-500'
                            placeholder='Seu nome completo'
                            onChange={(event) => setName(event.target.value)}
                         />
                         <input
                            type='email'
                            required
-                           className='bg-gray-900 rounded px-5 h-14 hover:outline hover:outline-1 hover:outline-green-500 focus:outline focus:outline-green-500 focus:invalid:outline-red-500'
+                           className='bg-gray-900 rounded px-5 h-12 xl:h-14 hover:outline hover:outline-1 hover:outline-green-500 focus:outline focus:outline-green-500 focus:invalid:outline-red-500'
                            placeholder='Digite seu e-mail'
                            onChange={(event) => setEmail(event.target.value)}
                         />
                         <button
                            type='submit'
-                           className='mt-4 bg-green-500 uppercase py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity-50'
+                           className='mt-4 bg-green-500 uppercase py-3 xl:py-4 rounded font-bold text-sm hover:bg-green-700 transition-colors disabled:opacity-50'
                            disabled={loading}
                         >
                            Garantir minha vaga
@@ -86,6 +88,7 @@ export function Subscribe() {
                <img
                   src={codeImage}
                   alt='Imagem ilustrativa de códigos de programação'
+                  className='px-5 md:px-0'
                />
             </div>
          </main>

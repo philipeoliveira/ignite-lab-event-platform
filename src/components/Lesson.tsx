@@ -3,6 +3,7 @@ import { format, isPast } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { Link, useParams } from 'react-router-dom';
 import classNames from 'classNames';
+import { toggleMenu } from '../utils/toggleMenu';
 
 interface LessonProps {
    title: string;
@@ -29,61 +30,67 @@ export function Lesson(props: LessonProps) {
    const isActiveLesson = slug === props.slug;
 
    return (
-      <Link to={`/event/lesson/${props.slug}`} className='group'>
-         <span className='text-gray-300'>{availableDateFormatted}</span>
-
-         <div
-            className={classNames(
-               'rounded border border-gray-500 p-4 mt-2 group-hover:border-green-500 relative',
-               {
-                  'bg-green-500': isActiveLesson,
-                  'border-green-500': isActiveLesson,
-               }
-            )}
+      <li>
+         <Link
+            to={`/event/lesson/${props.slug}`}
+            onClick={() => toggleMenu()}
+            className='group'
          >
-            {isActiveLesson && <span className={'left-arrow'}></span>}
-
-            <header className='flex items-center justify-between'>
-               {isLessonAvailable ? (
+            <span className='text-gray-300 text-xs xl:text-base'>
+               {availableDateFormatted}
+            </span>
+            <div
+               className={classNames(
+                  'rounded border border-gray-500 p-3 xl:p-4 mt-2 group-hover:border-green-500 relative',
+                  {
+                     'bg-green-500': isActiveLesson,
+                     'border-green-500': isActiveLesson,
+                  }
+               )}
+            >
+               {isActiveLesson && <span className={'lesson-left-arrow'}></span>}
+               <header className='flex items-center justify-between'>
+                  {isLessonAvailable ? (
+                     <span
+                        className={classNames(
+                           'text-sm font-medium flex gap-2 items-center',
+                           {
+                              'text-white': isActiveLesson,
+                              'text-blue-500': !isActiveLesson,
+                           }
+                        )}
+                     >
+                        <CheckCircle size={20} />
+                        Conteúdo liberado
+                     </span>
+                  ) : (
+                     <span className='text-sm text-orange-500 font-medium flex gap-2 items-center'>
+                        <Lock size={20} />
+                        Em breve
+                     </span>
+                  )}
                   <span
                      className={classNames(
-                        'text-sm font-medium flex gap-2 items-center',
+                        'text-xs rounded py-[0.125rem] px-2 text-white border font-bold uppercase',
                         {
-                           'text-white': isActiveLesson,
-                           'text-blue-500': !isActiveLesson,
+                           'border-white': isActiveLesson,
+                           'border-green-300': !isActiveLesson,
                         }
                      )}
                   >
-                     <CheckCircle size={20} />
-                     Conteúdo liberado
+                     {props.type == 'live' ? 'Ao vivo' : 'Aula Prática'}
                   </span>
-               ) : (
-                  <span className='text-sm text-orange-500 font-medium flex gap-2 items-center'>
-                     <Lock size={20} />
-                     Em breve
-                  </span>
-               )}
-               <span
-                  className={classNames(
-                     'text-xs rounded py-[0.125rem] px-2 text-white border font-bold uppercase',
-                     {
-                        'border-white': isActiveLesson,
-                        'border-green-300': !isActiveLesson,
-                     }
-                  )}
+               </header>
+               <strong
+                  className={classNames('mt-3 xl:mt-5 block', {
+                     'text-white': isActiveLesson,
+                     'text-gray-200': !isActiveLesson,
+                  })}
                >
-                  {props.type == 'live' ? 'Ao vivo' : 'Aula Prática'}
-               </span>
-            </header>
-            <strong
-               className={classNames('mt-5 block', {
-                  'text-white': isActiveLesson,
-                  'text-gray-200': !isActiveLesson,
-               })}
-            >
-               {props.title}
-            </strong>
-         </div>
-      </Link>
+                  {props.title}
+               </strong>
+            </div>
+         </Link>
+      </li>
    );
 }

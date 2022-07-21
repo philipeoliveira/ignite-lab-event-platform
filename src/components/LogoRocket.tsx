@@ -6,6 +6,7 @@ export function LogoRocket() {
          viewBox='0 0 162 31'
          fill='none'
          xmlns='http://www.w3.org/2000/svg'
+         className='w-3/4 xl:w-auto m-auto xl:m-0'
       >
          <path
             d='M33.7551 8.91846C32.3921 8.91846 31.2682 9.99448 31.2682 11.3512V16.4974V21.6436H33.7551V16.4974V11.3512H36.7202H39.6853V8.91846H36.7202H33.7551Z'

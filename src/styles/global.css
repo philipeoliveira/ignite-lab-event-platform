@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-   @apply bg-gray-900 text-gray-100;
-   -webkit-font-smoothing: antialiased;
+@layer base {
+   body {
+      @apply bg-gray-900 text-gray-100;
+      -webkit-font-smoothing: antialiased;
+   }
 }
 
-@layer utilities {
-   .left-arrow::before {
+@layer components {
+   .lesson-left-arrow::before {
       content: ' ';
       position: absolute;
       width: 20px;
@@ -19,6 +21,24 @@ body {
       @apply bg-green-500 border border-green-500;
    }
 
+   .animated-monitor {
+      animation: animateMonitor 6s ease-in-out forwards infinite;
+   }
+   @keyframes animateMonitor {
+      0% {
+         opacity: 0.3;
+         stroke-dasharray: 640;
+         stroke-dashoffset: 640;
+      }
+      25%,
+      100% {
+         opacity: 1;
+         stroke-dashoffset: 0;
+      }
+   }
+}
+
+@layer utilities {
    .my-pulse {
       animation: myPulse 6s ease-in-out infinite;
    }
@@ -29,21 +49,17 @@ body {
       25% {
          opacity: 1;
       }
-   }
-
-   .animated-svg {
-      animation: animateSvg 6s ease-in-out forwards infinite;
-   }
-   @keyframes animateSvg {
-      0% {
+      27% {
          opacity: 0.3;
-         stroke-dasharray: 640;
-         stroke-dashoffset: 640;
       }
-      25%,
-      100% {
+      29% {
          opacity: 1;
-         stroke-dashoffset: 0;
+      }
+      30% {
+         opacity: 0.3;
+      }
+      32% {
+         opacity: 1;
       }
    }
 }
