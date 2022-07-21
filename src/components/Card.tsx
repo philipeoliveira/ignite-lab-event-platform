@@ -1,4 +1,4 @@
-import { CaretRight, FileArrowDown } from 'phosphor-react';
+import { CaretRight, FileArrowDown, Image } from 'phosphor-react';
 
 export function Card() {
    return (
@@ -28,7 +28,7 @@ export function Card() {
             className='bg-gray-700 rounded overflow-hidden flex items-stretch gap-5 xl:gap-6 hover:bg-gray-600 transitions-colors'
          >
             <div className='bg-green-700 h-full p-3 xl:p-6 flex items-center'>
-               <FileArrowDown className='text-3xl xl:text-[40px]' />
+               <Image className='text-3xl xl:text-[40px]' />
             </div>
             <div className='py-3 pr-5 xl:pr-0 xl:py-6 flex-1 leading-relaxed'>
                <strong className='text-lg xl:text-xl'>
