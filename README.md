@@ -6,7 +6,7 @@
 <h2>Descrição</h2>
 <p>Este projeto chama-se <strong>Event Platform</strong>.</p>
 <p>É uma aplicação em que o usuário pode se cadastrar através do nome e e-mail para ter acesso às aulas disponibilizadas em uma <strong>plataforma de vídeos</strong>.</p>
-<p>As aulas, professores e os inscritos são controlados através do <strong>CMS Hygraph</strong></p>.
+<p>As aulas, professores e os inscritos são controlados através do <strong>CMS Hygraph</strong>.</p>
 <hr>
 <h2>Tecnologias</h2>
 <p>As principais tecnologias utilizadas foram:</p>
